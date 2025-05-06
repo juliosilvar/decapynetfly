@@ -2,19 +2,20 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "static/uploads"
-public_folder: "/uploads"
+media_folder: "img"
+public_folder: "/img"
 
 collections:
-  - name: "homenajes"
-    label: "Páginas conmemorativas"
-    folder: "content/homenajes"
-    create: true
-    slug: "pagina"
-    fields:
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Fechas", name: "fechas", widget: "string" }
-      - { label: "Frase", name: "frase", widget: "text" }
-      - { label: "Imagen", name: "imagen", widget: "image" }
-      - { label: "Video YouTube", name: "video", widget: "string" }
-      - { label: "Ubicación", name: "ubicacion", widget: "string" }
+  - name: "pagina"
+    label: "Página Conmemorativa"
+    files:
+      - file: "data/pagina.json"
+        label: "Contenido"
+        name: "contenido"
+        fields:
+          - { label: "Nombre", name: "nombre", widget: "string" }
+          - { label: "Fechas", name: "fechas", widget: "string" }
+          - { label: "Frase", name: "frase", widget: "text" }
+          - { label: "Enlace de video", name: "video", widget: "string" }
+          - { label: "Ubicación", name: "ubicacion", widget: "string" }
+          - { label: "Imagen", name: "imagen", widget: "image" }
